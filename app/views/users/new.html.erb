@@ -1,0 +1,38 @@
+
+<!--
+ <form action="/users" method="POST" accept-charset="UTF-8">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="user[username]"><br><br>
+  <label for="">Email:</label>
+  <input type="text" id="email" name="user[email]"><br><br>
+  <label for="">Password:</label>
+  <input type="password" id="pass" name="user[password]"><br><br>
+  <input type="submit" value="Submit">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %> "> -->
+
+ 
+<!-- <%= form_tag("/users", method: "POST") do %>
+  <%= label_tag(:username, "Username:") %>
+  <%= text_field_tag(:username) %><br><br>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %><br><br>
+  <%= label_tag(:password, "Password:") %>
+  <%= password_field_tag(:password) %><br><br>
+  <%= submit_tag("Submit") %>
+<% end  %> -->
+<br><br>
+<%= form_for :user, url: users_path do |f| %>
+<%# <%= f.error_messages_for :user %>
+  Your Username Here: <%= f.text_field :username%>
+    <%= f.error_message_on(:username) %> <br /><br>
+
+  Email: <%= f.text_field :email%>
+    <%= f.error_message_on(:email) %><br /><br>
+  Password : <%= f.password_field :password %>
+  <%= f.error_message_on(:password) %><br /><br>
+
+  <%= f.submit 'Submit' %>
+
+<% end %>
+
+<p><%= link_to 'Edit Page', '/users/1/edit' %></p>
