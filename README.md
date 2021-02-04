@@ -14,11 +14,10 @@
 ### Prerequisites
 
 Text Editor (VSCode is suggested.)
-Ruby
-Rails
-Bundler
-Yarn
-SQL
+- Ruby
+- Rails
+- Bundler
+- Yarn
 
 ## Getting Started
 
